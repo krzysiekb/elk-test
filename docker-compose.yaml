@@ -14,7 +14,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - data01:/usr/share/elasticsearch/data
+      - ./data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -31,10 +31,6 @@ services:
       - elk
     depends_on:
       - elasticsearch
-
-volumes:
-  data01:
-    driver: local
 
 networks:
   elk:
